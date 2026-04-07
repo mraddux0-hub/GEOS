@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LinkStream Bin</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>LinkStream Bin</h1>
+      <p class="subtitle">Share links instantly. Stream video links in-browser.</p>
+
+      <form id="createForm" class="card">
+        <label>
+          URL to share
+          <input id="url" name="url" type="url" required placeholder="https://example.com/video.m3u8" />
+        </label>
+
+        <label>
+          Visibility
+          <select id="visibility" name="visibility">
+            <option value="public">Public</option>
+            <option value="private">Private (password protected)</option>
+          </select>
+        </label>
+
+        <label id="passwordRow" class="hidden">
+          Password
+          <input id="password" name="password" type="password" minlength="4" placeholder="min 4 chars" />
+        </label>
+
+        <label>
+          Expiry (hours, optional)
+          <input id="expiry" name="expiresInHours" type="number" min="0" placeholder="0 = never expires" />
+        </label>
+
+        <button type="submit">Create Share Link</button>
+      </form>
+
+      <section id="result" class="card hidden"></section>
+    </main>
+
+    <script src="/main.js"></script>
+  </body>
+</html>
